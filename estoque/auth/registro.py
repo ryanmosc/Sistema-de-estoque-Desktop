@@ -27,7 +27,8 @@ def registrar_usuario(nome, usuario, senha):
             messagebox.showerror("Erro", "Este usuário já está cadastrado!")
             return
 
-        senha_criptografada = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
+       senha_criptografada = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
 
         cursor.execute("""
             INSERT INTO usuarios (nomes, usuario, senhas)
