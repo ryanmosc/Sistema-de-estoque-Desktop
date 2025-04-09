@@ -1,5 +1,6 @@
 import psycopg2
 
+#Conexão com banco de dados Postgress
 def conectar():
     try:
         conexao = psycopg2.connect(

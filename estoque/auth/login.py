@@ -1,8 +1,10 @@
 from db.conexao import conectar
 import bcrypt
 from tkinter import messagebox
+from views.home_view import criar_tela_inicial
 
-def verificar_login(nome_usuario, senha):
+#Login
+def verificar_login(nome_usuario, senha, janela):
     if not nome_usuario or not senha:
         messagebox.showerror("Erro", "Nome de usuário e senha são obrigatórios!")
         return False
@@ -25,7 +27,8 @@ def verificar_login(nome_usuario, senha):
             hash_armazenado = hash_armazenado.encode('utf-8')
 
         if bcrypt.checkpw(senha_bytes, hash_armazenado):
-            return True
+            janela.destroy()  
+            criar_tela_inicial() 
         else:
             messagebox.showerror("Erro", "Senha incorreta.")
             return False
