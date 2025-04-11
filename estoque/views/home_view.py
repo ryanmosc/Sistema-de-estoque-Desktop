@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from home.home import abrir_tela_estoque, abrir_tela_funcionarios,abrir_tela_saidas,abrir_tela_metricas
 
 def criar_tela_inicial():
@@ -6,9 +7,14 @@ def criar_tela_inicial():
     janela.title("Sistema de Estoque")
     janela.geometry("900x600")
     janela.configure(bg="#f5f5f5")
-
+    
+    
     topbar = tk.Frame(janela, bg="#2c3e50", height=50)
     topbar.pack(side="top", fill="x")
+    
+    def sair():
+        if messagebox.askokcancel("Sair", "Deseja realmente sair?"):
+            janela.destroy()
 
     
     botoes = {
@@ -17,8 +23,9 @@ def criar_tela_inicial():
         "Funcionários":lambda:abrir_tela_funcionarios(janela),
         "Saídas": lambda: abrir_tela_saidas(janela),
         "Métricas": lambda: abrir_tela_metricas(janela),
-        "Sair": janela.quit
+        "Sair": lambda:sair()
     }
+    
 
     for texto, comando in botoes.items():
         btn = tk.Button(
@@ -49,5 +56,6 @@ def criar_tela_inicial():
 
     janela.mainloop()
 
+
 #Comando utilizado para burlar o login, apos terminar favor excluir ou comentar
-# criar_tela_inicial()
+criar_tela_inicial()

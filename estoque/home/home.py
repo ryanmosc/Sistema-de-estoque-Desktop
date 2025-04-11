@@ -6,6 +6,7 @@ import tkinter as tk
 def abrir_tela_estoque(janela_pai):
     from views.home_view import criar_tela_inicial
     from estoque.views_estoque.cadastrar_view import exibir_formulario_cadastro
+    from estoque.views_estoque.ler_view import exibir_tela_pesquisa
     janela_pai.destroy()
     janela_estoque = tk.Tk()
     janela_estoque.title("Estoque")
@@ -18,10 +19,9 @@ def abrir_tela_estoque(janela_pai):
 
     botoes = {
         "Cadastrar": lambda: exibir_formulario_cadastro(janela_estoque),
+        "Pesquisa": lambda: exibir_tela_pesquisa(janela_estoque),
         "Atualizar": lambda: print("Função atualizar chamada"),
         "Deletar": lambda: print("Função deletar chamada"),
-        "Listar": lambda: print("Função listar chamada"),
-        "Ler": lambda: print("Função ler chamada"),
         "Voltar": lambda: (janela_estoque.destroy(), criar_tela_inicial())
     }
 

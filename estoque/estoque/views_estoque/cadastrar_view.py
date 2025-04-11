@@ -15,6 +15,8 @@ def exibir_formulario_cadastro(janela):
     entradas = {}
 
     categorias_opcoes = ["ALIMENTO", "LIMPEZA", "HIGIENE", "BEBIDAS", "OUTROS"]
+    
+
 
     campos = [
         "Nome do Produto",
@@ -31,6 +33,7 @@ def exibir_formulario_cadastro(janela):
             combobox = ttk.Combobox(form_frame, values=categorias_opcoes, state="readonly")
             combobox.grid(row=idx, column=1, pady=5, padx=5)
             entradas[campo] = combobox
+            combobox.current(4) 
         else:
             entrada = tk.Entry(form_frame)
             entrada.grid(row=idx, column=1, pady=5, padx=5)
