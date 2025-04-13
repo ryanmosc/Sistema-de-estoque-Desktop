@@ -10,7 +10,7 @@ def conectar():
             host="localhost",
             port="5432"
         )
-        print("[OK] Conexão estabelecida com sucesso!")
+        print("[OK] Conexão estabelecida com sucesso!, Ação bem sucedida!")
         return conexao
     except Exception as e:
         print(f"[ERRO] Falha na conexão: {e}")

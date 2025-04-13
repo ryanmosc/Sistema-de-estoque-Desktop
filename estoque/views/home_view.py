@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from home.home import abrir_tela_estoque, abrir_tela_funcionarios,abrir_tela_saidas,abrir_tela_metricas
+from estoque.views_estoque.ler_view import exibir_tela_pesquisa
 
 def criar_tela_inicial():
     janela = tk.Tk()
@@ -19,7 +20,7 @@ def criar_tela_inicial():
     
     botoes = {
         "Início": lambda: print("Início"),
-       "Estoque": lambda: abrir_tela_estoque(janela),
+       "Estoque": lambda: exibir_tela_pesquisa(janela),
         "Funcionários":lambda:abrir_tela_funcionarios(janela),
         "Saídas": lambda: abrir_tela_saidas(janela),
         "Métricas": lambda: abrir_tela_metricas(janela),
@@ -58,4 +59,4 @@ def criar_tela_inicial():
 
 
 #Comando utilizado para burlar o login, apos terminar favor excluir ou comentar
-criar_tela_inicial()
+# criar_tela_inicial()

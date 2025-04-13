@@ -6,7 +6,7 @@ def buscar_produtos(tipo_pesquisa, entrada_nome, categoria_box, preco_min, preco
         conn = conectar()
         cursor = conn.cursor()
 
-        consulta_base = "SELECT nome_produto, estoque, categoria, preco_custo, preco_venda, data_entrada FROM estoque"
+        consulta_base = "SELECT id,nome_produto, estoque, categoria, preco_custo, preco_venda, data_entrada FROM estoque"
         filtros = []
         valores = []
 
