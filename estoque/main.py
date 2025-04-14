@@ -6,6 +6,6 @@ from views.login_view import exibir_tela_login
 if __name__ == "__main__":
     app = tk.Tk()
     app.title("Login")
-    app.geometry("900x600")
+    app.geometry("600x400")
     exibir_tela_login(app)
     app.mainloop()
